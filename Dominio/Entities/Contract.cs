@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using Dominio.Entities;
 
 namespace Persistencia.Entities;
 
-public partial class Contract
+public  class Contract : BaseEntity
 {
-    public int Id { get; set; }
+    public int ID { get; set; }
 
     public int? ClientId { get; set; }
 
@@ -27,5 +28,4 @@ public partial class Contract
 
     public virtual ICollection<Schedule> Schedules { get; set; } = new List<Schedule>();
 
-    public virtual State? State { get; set; }
 }

@@ -38,9 +38,7 @@ namespace Persistencia.Data.Configuration
                 .HasForeignKey(d => d.EmployeeId)
                 .HasConstraintName("contract_ibfk_2");
 
-            builder.HasOne(d => d.State).WithMany(p => p.Contracts)
-                .HasForeignKey(d => d.StateId)
-                .HasConstraintName("contract_ibfk_3");
+          
         }
     }
 }

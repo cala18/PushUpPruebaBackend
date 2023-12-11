@@ -49,8 +49,6 @@ public partial class ClayContext : DbContext
 
     public virtual DbSet<Shift> Shifts { get; set; }
 
-
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder

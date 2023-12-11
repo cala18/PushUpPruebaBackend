@@ -1,3 +1,4 @@
+using API.Extension;
 using Microsoft.EntityFrameworkCore;
 using Persistencia.Data;
 
@@ -10,12 +11,12 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+builder.Services.ConfigureCors();
 var app = builder.Build();
 builder.Services.AddDbContext<ClayContext>(options =>
 {
-    string ConnectionString = builder.Configuration.GetConnectionString("MySqlConex");
-    options.UseMySql(ConnectionString, ServerVersion.AutoDetect(ConnectionString));
+    string connectionString = builder.Configuration.GetConnectionString("MySqlConex");
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 });
 
 // Configure the HTTP request pipeline.
@@ -25,6 +26,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("CorsPolicy");
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

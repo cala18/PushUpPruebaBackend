@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using Dominio.Entities;
 
 namespace Persistencia.Entities;
 
-public partial class Addresstype
+public partial class Addresstype : BaseEntity
 {
     public int Id { get; set; }
 

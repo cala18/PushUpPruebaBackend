@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using Dominio.Entities;
 
 namespace Persistencia.Entities;
 
-public partial class Personcontact
+public partial class Personcontact : BaseEntity
 {
     public int Id { get; set; }
 

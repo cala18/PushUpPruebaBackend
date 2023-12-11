@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using Dominio.Entities;
 
 namespace Persistencia.Entities;
 
-public partial class Employee
+public partial class Employee : BaseEntity
 {
     public int EmployeeId { get; set; }
 
